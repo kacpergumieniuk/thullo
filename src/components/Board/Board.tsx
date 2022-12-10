@@ -2,6 +2,7 @@ import { list } from 'postcss'
 import React, { useEffect, useState } from 'react'
 import { AddListTab } from './AddListTab'
 import { List, ListProps } from './List/List'
+
 export const Board = () => {
     const [lists, setLists] = useState<Array<ListProps>>([])
 
