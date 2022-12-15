@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from 'react'
 
 interface AddCardTabProps {
-    handleAddCard: (name: string) => void
+    handleAddCard: (name: string, listId: string) => void
+    listId: string
 }
 
-export const AddCardTab = ({ handleAddCard }: AddCardTabProps) => {
+export const AddCardTab = ({ handleAddCard, listId }: AddCardTabProps) => {
     const [cardName, setCardName] = useState<string>('')
 
     const handleClickAddButton = () => {
-        handleAddCard(cardName)
+        handleAddCard(listId, cardName)
         setCardName('')
     }
-
-    useEffect(() => {
-        console.log(cardName)
-    }, [cardName])
 
     const buttonDisabled = cardName.trim() === ''
     return (
